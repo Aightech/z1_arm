@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/z1_arm_ctrl.dir/src/main_ctrl.cpp.o -o z1_arm_ctrl  libz1_arm.2.2.a 

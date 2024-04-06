@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/aightech/dev/prj/unitreeZ1/z1_arm/build",
+  "command": "/usr/bin/c++  -I/home/aightech/dev/prj/unitreeZ1/z1_arm/include -g -std=gnu++11 -o CMakeFiles/z1_arm.2.2.dir/src/z1_arm.cpp.o -c /home/aightech/dev/prj/unitreeZ1/z1_arm/src/z1_arm.cpp",
+  "file": "/home/aightech/dev/prj/unitreeZ1/z1_arm/src/z1_arm.cpp"
+},
+{
+  "directory": "/home/aightech/dev/prj/unitreeZ1/z1_arm/build",
+  "command": "/usr/bin/c++  -I/home/aightech/dev/prj/unitreeZ1/z1_arm/include -g -std=gnu++11 -o CMakeFiles/z1_arm_ctrl.dir/src/main_ctrl.cpp.o -c /home/aightech/dev/prj/unitreeZ1/z1_arm/src/main_ctrl.cpp",
+  "file": "/home/aightech/dev/prj/unitreeZ1/z1_arm/src/main_ctrl.cpp"
+},
+{
+  "directory": "/home/aightech/dev/prj/unitreeZ1/z1_arm/build",
+  "command": "/usr/bin/c++  -I/home/aightech/dev/prj/unitreeZ1/z1_arm/include -g -std=gnu++11 -o CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o -c /home/aightech/dev/prj/unitreeZ1/z1_arm/src/main_task.cpp",
+  "file": "/home/aightech/dev/prj/unitreeZ1/z1_arm/src/main_task.cpp"
+}
+]
