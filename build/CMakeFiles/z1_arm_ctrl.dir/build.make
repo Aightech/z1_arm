@@ -93,6 +93,8 @@ z1_arm_ctrl_EXTERNAL_OBJECTS =
 z1_arm_ctrl: CMakeFiles/z1_arm_ctrl.dir/src/main_ctrl.cpp.o
 z1_arm_ctrl: CMakeFiles/z1_arm_ctrl.dir/build.make
 z1_arm_ctrl: libz1_arm.2.2.a
+z1_arm_ctrl: /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1ctrl/bin/libZ1_x86_64.so
+z1_arm_ctrl: /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/bin/libZ1_SDK_x86_64.so
 z1_arm_ctrl: CMakeFiles/z1_arm_ctrl.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aightech/dev/prj/unitreeZ1/z1_arm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable z1_arm_ctrl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/z1_arm_ctrl.dir/link.txt --verbose=$(VERBOSE)

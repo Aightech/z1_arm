@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/aightech/dev/prj/unitreeZ1/z1_arm/include
+CXX_INCLUDES = -I/home/aightech/dev/prj/unitreeZ1/z1_arm/include -isystem /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1ctrl/include -isystem /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include
 
-CXX_FLAGS = -g -std=gnu++11
+CXX_FLAGS =  -O3 -std=c++14 -g
 

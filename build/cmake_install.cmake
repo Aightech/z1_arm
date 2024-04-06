@@ -52,6 +52,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/aightech/dev/prj/unitreeZ1/z1_arm/build/z1_arm_task")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/z1_arm_task" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/z1_arm_task")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/z1_arm_task"
+         OLD_RPATH "/home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1ctrl/bin:/home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/bin:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/z1_arm_task")
     endif()
@@ -60,6 +64,13 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE STATIC_LIBRARY FILES "/home/aightech/dev/prj/unitreeZ1/z1_arm/build/libz1_arm.2.2.a")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/cmake_install.cmake")
+  include("/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/cmake_install.cmake")
+
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

@@ -7,3 +7,15 @@
 /home/aightech/dev/prj/unitreeZ1/z1_arm/build/CMakeFiles/install.dir
 /home/aightech/dev/prj/unitreeZ1/z1_arm/build/CMakeFiles/install/local.dir
 /home/aightech/dev/prj/unitreeZ1/z1_arm/build/CMakeFiles/install/strip.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/CMakeFiles/edit_cache.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/CMakeFiles/rebuild_cache.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/CMakeFiles/list_install_components.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/CMakeFiles/install.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/CMakeFiles/install/local.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1ctrl/CMakeFiles/install/strip.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/CMakeFiles/edit_cache.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/CMakeFiles/rebuild_cache.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/CMakeFiles/list_install_components.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/CMakeFiles/install.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/CMakeFiles/install/local.dir
+/home/aightech/dev/prj/unitreeZ1/z1_arm/build/lib/built_z1sdk/CMakeFiles/install/strip.dir

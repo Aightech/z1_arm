@@ -1,0 +1,8 @@
+[submodule "lib/built_z1sdk"]
+	path = lib/built_z1sdk
+	url = git@github.com:Aightech/built_z1sdk
+	branch = main
+[submodule "lib/built_z1ctrl"]
+	path = lib/built_z1ctrl
+	url = git@github.com:Aightech/built_z1ctrl
+	branch = main

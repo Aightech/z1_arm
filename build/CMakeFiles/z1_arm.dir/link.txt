@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/z1_arm.dir/src/main.cpp.o -o z1_arm  libz1_arm.2.2.a 

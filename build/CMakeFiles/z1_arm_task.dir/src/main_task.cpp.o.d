@@ -1,9 +1,9 @@
 CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /home/aightech/dev/prj/unitreeZ1/z1_arm/src/main_task.cpp \
  /usr/include/stdc-predef.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/control/unitreeArm.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/control/ctrlComponents.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/message/arm_common.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/control/unitreeArm.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/control/ctrlComponents.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/message/arm_common.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -19,8 +19,8 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/message/LowlevelCmd.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/math/mathTypes.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/message/LowlevelCmd.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/math/mathTypes.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
@@ -62,13 +62,16 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
  /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
@@ -87,6 +90,7 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/exception_defines.h \
  /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -146,9 +150,10 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/c++/11/cerrno /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
@@ -178,8 +183,10 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/bits/std_function.h /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/limits \
- /usr/include/c++/11/climits \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/c++/11/limits /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -380,8 +387,8 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/iostream \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/message/LowlevelState.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/message/udp.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/message/LowlevelState.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/message/udp.h \
  /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
@@ -399,6 +406,7 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+ /usr/include/x86_64-linux-gnu/bits/socket2.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/termios.h \
  /usr/include/x86_64-linux-gnu/bits/termios.h \
  /usr/include/x86_64-linux-gnu/bits/termios-struct.h \
@@ -411,7 +419,7 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/termios-tcflow.h \
  /usr/include/x86_64-linux-gnu/bits/termios-misc.h \
  /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/utilities/loop.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/utilities/loop.h \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
@@ -434,14 +442,15 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/model/ArmModel.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/thirdparty/robotics.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/math/mathTools.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/model/ArmModel.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/thirdparty/robotics.h \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/math/mathTools.h \
  /usr/include/c++/11/math.h \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/thirdparty/quadProgpp/QuadProg++.hh \
- /home/aightech/dev/prj/unitreeZ1/z1_arm/include/unitree_arm_sdk/thirdparty/quadProgpp/Array.hh \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/thirdparty/quadProgpp/QuadProg++.hh \
+ /home/aightech/dev/prj/unitreeZ1/z1_arm/lib/built_z1sdk/include/unitree_arm_sdk/thirdparty/quadProgpp/Array.hh \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
@@ -452,4 +461,5 @@ CMakeFiles/z1_arm_task.dir/src/main_task.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/11/bits/codecvt.h \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/include/c++/11/bits/quoted_string.h

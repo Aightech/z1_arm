@@ -78,9 +78,9 @@ elseif (TARGET ${LIB_NAME})
   message("${PREFIX_MSG}-- ${ColourBold}${Esc}[${color_code}m${LIB_NAME}${ColourReset} is already built")
 else ()
 
-  ###### C++ standard ######
-  set(CMAKE_CXX_STANDARD 11)
-  set(CMAKE_CXX_STANDARD_REQUIRED True)
+  # ###### C++ standard ######
+  # set(CMAKE_CXX_STANDARD 11)
+  # set(CMAKE_CXX_STANDARD_REQUIRED True)
   
 
   ###### Get the sources and headers ######

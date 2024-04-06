@@ -66,17 +66,52 @@ CMAKE_BINARY_DIR = /home/aightech/dev/prj/unitreeZ1/z1_arm/build
 all: CMakeFiles/z1_arm.2.2.dir/all
 all: CMakeFiles/z1_arm_ctrl.dir/all
 all: CMakeFiles/z1_arm_task.dir/all
+all: lib/built_z1ctrl/all
+all: lib/built_z1sdk/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: lib/built_z1ctrl/preinstall
+preinstall: lib/built_z1sdk/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/z1_arm.2.2.dir/clean
 clean: CMakeFiles/z1_arm_ctrl.dir/clean
 clean: CMakeFiles/z1_arm_task.dir/clean
+clean: lib/built_z1ctrl/clean
+clean: lib/built_z1sdk/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory lib/built_z1ctrl
+
+# Recursive "all" directory target.
+lib/built_z1ctrl/all:
+.PHONY : lib/built_z1ctrl/all
+
+# Recursive "preinstall" directory target.
+lib/built_z1ctrl/preinstall:
+.PHONY : lib/built_z1ctrl/preinstall
+
+# Recursive "clean" directory target.
+lib/built_z1ctrl/clean:
+.PHONY : lib/built_z1ctrl/clean
+
+#=============================================================================
+# Directory level rules for directory lib/built_z1sdk
+
+# Recursive "all" directory target.
+lib/built_z1sdk/all:
+.PHONY : lib/built_z1sdk/all
+
+# Recursive "preinstall" directory target.
+lib/built_z1sdk/preinstall:
+.PHONY : lib/built_z1sdk/preinstall
+
+# Recursive "clean" directory target.
+lib/built_z1sdk/clean:
+.PHONY : lib/built_z1sdk/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/z1_arm.2.2.dir
