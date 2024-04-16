@@ -6,3 +6,7 @@
 	path = lib/built_z1ctrl
 	url = git@github.com:Aightech/built_z1ctrl
 	branch = main
+[submodule "tool_lib/leapmotion"]
+	path = tool_lib/leapmotion
+	url = git@github.com:Aightech/leapmotion
+	branch = main

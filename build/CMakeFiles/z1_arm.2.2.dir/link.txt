@@ -1,2 +1,0 @@
-/usr/bin/ar qc libz1_arm.2.2.a CMakeFiles/z1_arm.2.2.dir/src/z1_arm.cpp.o
-/usr/bin/ranlib libz1_arm.2.2.a
