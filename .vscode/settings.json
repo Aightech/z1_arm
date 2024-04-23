@@ -56,7 +56,16 @@
         "ratio": "cpp",
         "semaphore": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "csignal": "cpp",
+        "bitset": "cpp",
+        "condition_variable": "cpp",
+        "list": "cpp",
+        "optional": "cpp",
+        "fstream": "cpp",
+        "mutex": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp"
     },
     "workbench.colorTheme": "Default Dark+"
 }
