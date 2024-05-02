@@ -10,3 +10,7 @@
 	path = tool_lib/leapmotion
 	url = git@github.com:Aightech/leapmotion
 	branch = main
+[submodule "tool_lib/joystick"]
+	path = tool_lib/joystick
+	url = git@github.com:Aightech/joystick
+	branch = main

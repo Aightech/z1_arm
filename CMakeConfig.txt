@@ -1,11 +1,11 @@
 set(EXEC_NAME z1_arm)
-set(PROJECT_VERSION 1.5)
+set(PROJECT_VERSION 1.6)
 
 ###### Special libraries ######
 set(EXTRA_LIBS "")
 set(TOOL_LIBS "")		
 if(1)
-  set(EXTRA_LIBS "pthread")
+  set(EXTRA_LIBS "pthread" )
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++14")
