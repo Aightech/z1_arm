@@ -48,7 +48,7 @@ void tracking_mode(HandRobot *handRobots)
             {
                 if (hand->type == handRobots[t].handType) // if the hand is left or right
                 {
-                    if (handRobots[t].hand == NULL || (handRobots[t].hand != NULL && hand->id == handRobots[t].hand->id))
+                    if (true)
                     { // if the hand is already being tracked (or no hand has been tracked yet)
                         handRobots[t].updateHand(hand);
                         handFound[t] = true;
