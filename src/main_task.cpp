@@ -11,8 +11,9 @@ class Joystick : public cJoystick
 {
 public:
     int selectedArm = 0;
+    int mode = 1;
     bool switchReleased = true;
-    double speed = 0.01;
+    double speed = 0.04;
 };
 
 void connectArms(HandRobot *handRobots, int *udpPorts, int n = NB_ARMS)
@@ -27,6 +28,7 @@ void connectArms(HandRobot *handRobots, int *udpPorts, int n = NB_ARMS)
         ctrlComp->armModel = new Z1custom((i == 0 ? false : true)); // no UnitreeGripper
         ctrlComp->armModel->addLoad(0.03);                          // add 0.03kg payload to the end joint
         handRobots[i].arm = new UNITREE_ARM::unitreeArm(ctrlComp);
+        handRobots[i].arm->directions << 0, 0, 0, 0, 0, 0, 0;
         handRobots[i].arm->sendRecvThread->start();
         handRobots[i].arm->backToStart();
     }
@@ -91,7 +93,7 @@ void tracking_mode(HandRobot *handRobots)
             }
             double k[6] = {1, 1, 1, 10, 10, 10};
             double angular_vel = 0;
-            double linear_vel = 0.04;
+            double linear_vel = 0.06;
             Vec6 speed = {0, 0, 0, 0, 0, 0}; // coefficients of angular and linear velocity
             if (handFound[t])
             {
@@ -142,24 +144,34 @@ void joystick_mode(Joystick *js, HandRobot *handRobots)
     {
         if (abs(js->joystickValue(6)) > 0)
         {
+            if (js->selectedArm == 1)
+                js->mode = (js->mode + 1) % 2;
+
             js->selectedArm = (js->selectedArm + 1) % 2;
+            std::cout << "Selected arm: " << js->selectedArm << std::endl;
+            std::cout << "Mode: " << ((js->mode==1)?"translation":"rotation")<< std::endl;
             js->switchReleased = false;
         }
     }
     else if (abs(js->joystickValue(6)) == 0)
         js->switchReleased = true;
 
-    js->speed += -js->joystickValue(7) / 32767. / 1000000;
-    js->speed = (js->speed < 0.001) ? 0.001 : ((js->speed > 0.04) ? 0.04 : js->speed);
-    double angular_vel = 0;
+    double delta = js->joystickValue(7) / 32767. / 1000000;
+    if (delta)
+    {
+        js->speed += -delta;
+        js->speed = (js->speed < 0.001) ? 0.001 : ((js->speed > 0.06) ? 0.05 : js->speed);
+        std::cout << "speed: " << js->speed << std::endl;
+    }
+    double angular_vel = js->speed;
     double linear_vel = js->speed;
-    int jIndex[3] = {1, 0, 4};
+    int jIndex[6] = { 4, 1, 0, 1, 0, 4};
     for (int i = 0; i < 3; i++)
     {
         double val;
-        val = js->joystickValue(jIndex[i]) / 32767.;
+        val = js->joystickValue(jIndex[i + 3 * js->mode]) / 32767.;
         val = (val > 0.05) ? (val - 0.05) : ((val < -0.05) ? val + 0.05 : 0);
-        handRobots[js->selectedArm].arm->directions[i + 3] = -val; // reverse direction
+        handRobots[js->selectedArm].arm->directions[i + 3 * js->mode] = -val; // reverse direction
     }
     if (handRobots[js->selectedArm].period())
         handRobots[js->selectedArm].arm->cartesianCtrlCmd(handRobots[js->selectedArm].arm->directions, angular_vel, linear_vel);
@@ -196,7 +208,7 @@ typedef enum _runningMode
 int main()
 {
     HandRobot handRobots[NB_ARMS]; // processing the user hands
-    int udpPorts[2] = {8071, 8073};
+    int udpPorts[2] = {8073, 8071};
     connectArms(handRobots, udpPorts, NB_ARMS);
     connectLeap();
 
@@ -271,7 +283,7 @@ int main()
                 mode = TEACHING;
             }
         }
-        else if (!js.buttonPressed(8))
+        else if (teaching && !js.buttonPressed(8))
             js.switchReleased = true;
 
         switch (mode)
