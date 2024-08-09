@@ -27,6 +27,14 @@ public:
     ~Z1custom()
     {
     }
+    void setJointQMax(int index, float value)
+    {
+        _jointQMax[index] = value;
+    }
+    void setJointQMin(int index, float value)
+    {
+        _jointQMin[index] = value;
+    }
 };
 
 struct HandRobot

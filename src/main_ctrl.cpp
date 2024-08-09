@@ -93,6 +93,11 @@ int main(int argc, char **argv)
     ctrlComp->ctrl_port = 8881;
     ctrlComp->ctrl_IP = "192.168.123.110";
     int port = 8071;
+    std::cout << "Usage: " << std::endl;
+    std::cout << "l: left arm" << std::endl;
+    std::cout << "r: right arm" << std::endl;
+    std::cout << "k: keyboard control" << std::endl;
+    
     if (argc > 1)
     {
         for (int i = 1; i < argc; i++)
