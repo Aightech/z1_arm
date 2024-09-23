@@ -114,7 +114,8 @@ void lsl_mode(HandRobot *handRobot, LSLobj *lslobj)
         std::cout << "Stream found" << std::endl;
         lslobj->inlet = new lsl::stream_inlet(streams[0]);
     }
-    lslobj->inlet->pull_sample(lslobj->sample);
+    
+    lslobj->inlet->pull_sample(lslobj->sample, 1);
     if (lslobj->sample.size() == 6)
     {
         std::cout << "Received sample: ";
@@ -127,6 +128,12 @@ void lsl_mode(HandRobot *handRobot, LSLobj *lslobj)
             handRobot->arm->directions[i] = lslobj->sample[i];
         if (handRobot->period())
             handRobot->arm->cartesianCtrlCmd(handRobot->arm->directions, angular_vel, linear_vel);
+    }
+    else
+    {
+        //disconnect from the stream
+        delete lslobj->inlet;
+        lslobj->inlet = nullptr;
     }
 }
 

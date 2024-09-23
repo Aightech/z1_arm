@@ -47,17 +47,18 @@ public:
     Vec3 robotBase = {0, 0, 0};                                                        // position of the robot base
     bool isGrabbing = false;
     bool justGrabbed = false;
-    float grabStrength_threshold = 0.99;
+    float grabStrength_threshold = 0.8;
+    float openGripper = 0.0;
     std::string name = "HandRobot";
     UNITREE_ARM::unitreeArm *arm;
     eLeapHandType handType;
-    LEAP_HAND *hand=NULL;
-    clock_t last_t=0;
+    LEAP_HAND *hand = NULL;
+    clock_t last_t = 0;
 
     bool period()
     {
-        //std::cout << ((double)clock() - last_t) /CLOCKS_PER_SEC  << " " << arm->_ctrlComp->dt << std::endl;
-        if (((double)clock() - last_t) / CLOCKS_PER_SEC < arm->_ctrlComp->dt/2)
+        // std::cout << ((double)clock() - last_t) /CLOCKS_PER_SEC  << " " << arm->_ctrlComp->dt << std::endl;
+        if (((double)clock() - last_t) / CLOCKS_PER_SEC < arm->_ctrlComp->dt / 2)
             return false;
         else
         {
@@ -75,14 +76,16 @@ public:
 
     void updateHand(LEAP_HAND *hand)
     {
-        justGrabbed = !isGrabbing && (hand->grab_strength > grabStrength_threshold);
-        isGrabbing = hand->grab_strength > grabStrength_threshold;
+        justGrabbed = !isGrabbing && (hand->pinch_strength > grabStrength_threshold);
+        // std::cout << "strength: " << hand->grab_strength << " pinching: " << hand->pinch_strength << " pinch distance: " << hand->pinch_distance << std::endl;
+        isGrabbing = hand->pinch_strength > grabStrength_threshold;
         current[0] = hand->palm.orientation.z;
         current[1] = -hand->palm.orientation.x;
         current[2] = hand->palm.orientation.y;
         current[3] = -hand->palm.position.z / 1000; // convert to meters
         current[4] = -hand->palm.position.x / 1000;
         current[5] = hand->palm.position.y / 1000;
+        openGripper = (hand->pinch_distance-15.)/80.0;
         this->hand = hand;
     };
 

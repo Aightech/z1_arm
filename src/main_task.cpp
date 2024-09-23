@@ -22,7 +22,7 @@ void connectArms(HandRobot *handRobots, int *udpPorts, int n = NB_ARMS)
     {
         handRobots[i].name = (i == 0 ? "left" : "right");
         handRobots[i].handType = (i == 0 ? eLeapHandType_Left : eLeapHandType_Right);
-        auto ctrlComp = new UNITREE_ARM::CtrlComponents();
+        auto ctrlComp = new UNITREE_ARM::CtrlComponents(0.002,true);
         ctrlComp->dt = 0.002; // control period: 500Hz
         ctrlComp->udp = new UNITREE_ARM::UDPPort("127.0.0.1", udpPorts[i], udpPorts[i] + 1, UNITREE_ARM::RECVSTATE_LENGTH, UNITREE_ARM::BlockYN::NO, 500000);
         ctrlComp->armModel = new Z1custom((i == 0 ? false : true)); // no UnitreeGripper
@@ -95,25 +95,32 @@ void tracking_mode(HandRobot *handRobots)
             double angular_vel = 0;
             double linear_vel = 0.06;
             Vec6 speed = {0, 0, 0, 0, 0, 0}; // coefficients of angular and linear velocity
+            float speed_gripper = 0.0;
             if (handFound[t])
             {
                 handRobots[t].updatePosition();
 
                 if (handRobots[t].isGrabbing) // if the hand is grabbing, the robot will follow the hand
                 {
-                    std::cout << handRobots[t].name << " is grabbing ";
+                    // std::cout << handRobots[t].name << " is grabbing ";
                     auto p = handRobots[t].arm->lowstate->endPosture.transpose(); // get the current position of the robot
+                    float qGripper = handRobots[t].arm->lowstate->getGripperQ();  // get the current position of the gripper
                     for (int i = 0; i < 6; i++)
                     { // calculate the speed of the robot
                         speed[i] = -k[i] * (p[i] - handRobots[t].position[i]);
                         speed[i] = (speed[i] > 1) ? 1 : ((speed[i] < -1) ? -1 : speed[i]);
                     }
+                    speed_gripper = (-handRobots[t].openGripper - qGripper);
                 }
             }
             if (handRobots[t].period())
             {
-                handRobots[t].arm->directions << speed[0], speed[1], speed[2], speed[3], speed[4], speed[5], 0;
+                float qGripper = handRobots[t].arm->lowstate->getGripperQ(); 
+                std::cout << "qGripper: " << qGripper << std::endl;
+                // std::cout << "openGripper: " << handRobots[t].openGripper << std::endl;
+                handRobots[t].arm->directions << speed[0], speed[1], speed[2], speed[3], speed[4], speed[5],  speed_gripper;
                 handRobots[t].arm->cartesianCtrlCmd(handRobots[t].arm->directions, angular_vel, linear_vel);
+                //handRobots[t].arm->setGripperCmd(1, 1, 1);
             }
         }
         std::cout << "                           \xd" << std::flush;
@@ -149,7 +156,7 @@ void joystick_mode(Joystick *js, HandRobot *handRobots)
 
             js->selectedArm = (js->selectedArm + 1) % 2;
             std::cout << "Selected arm: " << js->selectedArm << std::endl;
-            std::cout << "Mode: " << ((js->mode==1)?"translation":"rotation")<< std::endl;
+            std::cout << "Mode: " << ((js->mode == 1) ? "translation" : "rotation") << std::endl;
             js->switchReleased = false;
         }
     }
@@ -165,7 +172,7 @@ void joystick_mode(Joystick *js, HandRobot *handRobots)
     }
     double angular_vel = js->speed;
     double linear_vel = js->speed;
-    int jIndex[6] = { 4, 1, 0, 1, 0, 4};
+    int jIndex[6] = {4, 1, 0, 1, 0, 4};
     for (int i = 0; i < 3; i++)
     {
         double val;
